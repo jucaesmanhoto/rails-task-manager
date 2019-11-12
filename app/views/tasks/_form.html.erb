@@ -1,4 +1,4 @@
-<%= form_for(task) do |f| %>
+<%= form_for(@task) do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field  :title, class: 'form-control' %>
@@ -7,5 +7,16 @@
     <%= f.label :details %>
     <%= f.text_area  :details, class: 'form-control' %>
   </div>
+
+  <div class="form-check my-4">
+      <%= f.check_box :completed, class: "form-check-input" %>
+      <label class="form-check-label" for="defaultCheck1">
+        completed
+      </label>
+  </div>
+
   <%= f.submit class: 'btn btn-primary'%>
+  <div class="dropdown-divider my-4"></div>
+  <i class="fa fa-history icons" aria-hidden="true"></i>
+  <%= link_to 'Back to list', tasks_path %>
 <% end %>
